@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>All Notices | College Digital Notice Board</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+
+<body>
+
+
+<!-- ================= HEADER ================= -->
+
+<header class="header">
+
+    <div class="logo-section">
+
+        <div class="college-logo">
+            C
+        </div>
+
+        <div>
+
+            <h1>ABC College of Engineering</h1>
+
+            <p>Digital Notice Board</p>
+
+        </div>
+
+    </div>
+
+
+    <nav class="navbar">
+
+        <a href="index.html">
+            Home
+        </a>
+
+        <a href="notice.html" class="active">
+            Notices
+        </a>
+
+        <a href="login.html">
+            Admin Login
+        </a>
+
+    </nav>
+
+</header>
+
+
+<!-- ================= PAGE HEADER ================= -->
+
+<section class="page-banner">
+
+    <div class="container">
+
+        <span class="small-title">
+            COLLEGE ANNOUNCEMENTS
+        </span>
+
+        <h2>All Notices</h2>
+
+        <p>
+            Find the latest announcements from the college.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- ================= NOTICE CONTENT ================= -->
+
+<main class="container notice-page">
+
+    <div class="search-area">
+
+        <div class="search-box">
+
+            <span>🔍</span>
+
+            <input
+                type="text"
+                id="allSearchInput"
+                placeholder="Search notices..."
+            >
+
+        </div>
+
+
+        <select id="allCategoryFilter">
+
+            <option value="all">
+                All Categories
+            </option>
+
+            <option value="Academic">
+                Academic
+            </option>
+
+            <option value="Examination">
+                Examination
+            </option>
+
+            <option value="Placement">
+                Placement
+            </option>
+
+            <option value="Events">
+                Events
+            </option>
+
+            <option value="Holiday">
+                Holiday
+            </option>
+
+            <option value="Fees">
+                Fees
+            </option>
+
+            <option value="General">
+                General
+            </option>
+
+        </select>
+
+    </div>
+
+
+    <div
+        id="allNoticeContainer"
+        class="notice-grid"
+    >
+    </div>
+
+</main>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer class="footer">
+
+    <div class="container footer-content">
+
+        <div>
+
+            <h3>
+                ABC College of Engineering
+            </h3>
+
+            <p>
+                Digital College Notice Board
+            </p>
+
+        </div>
+
+
+        <p>
+            © 2026 ABC College. All Rights Reserved.
+        </p>
+
+    </div>
+
+</footer>
+
+
+<script src="js/script.js"></script>
+
+</body>
+</html>

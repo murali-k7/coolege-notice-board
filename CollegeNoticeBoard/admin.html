@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Admin Dashboard | College Notice Board</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+
+<body class="admin-page">
+
+
+<!-- ================= ADMIN HEADER ================= -->
+
+<header class="admin-header">
+
+    <div class="logo-section">
+
+        <div class="college-logo">
+            C
+        </div>
+
+        <div>
+
+            <h2>College Notice Board</h2>
+
+            <p>Administrator Panel</p>
+
+        </div>
+
+    </div>
+
+
+    <div class="admin-actions">
+
+        <a
+            href="index.html"
+            class="outline-btn light-btn"
+        >
+            View Website
+        </a>
+
+        <button
+            id="logoutBtn"
+            class="logout-btn"
+        >
+            Logout
+        </button>
+
+    </div>
+
+</header>
+
+
+<!-- ================= ADMIN MAIN ================= -->
+
+<main class="admin-container">
+
+
+    <!-- Dashboard title -->
+
+    <div class="admin-title">
+
+        <div>
+
+            <span class="small-title">
+                ADMINISTRATION
+            </span>
+
+            <h1>Dashboard</h1>
+
+            <p>
+                Manage college announcements and notices.
+            </p>
+
+        </div>
+
+        <button
+            id="openNoticeModal"
+            class="primary-btn"
+        >
+            + Add New Notice
+        </button>
+
+    </div>
+
+
+    <!-- Statistics -->
+
+    <section class="admin-stats">
+
+        <div class="admin-stat">
+
+            <div class="admin-stat-icon">
+                📢
+            </div>
+
+            <div>
+
+                <span>Total Notices</span>
+
+                <strong id="adminTotal">
+                    0
+                </strong>
+
+            </div>
+
+        </div>
+
+
+        <div class="admin-stat">
+
+            <div class="admin-stat-icon">
+                🔥
+            </div>
+
+            <div>
+
+                <span>Important</span>
+
+                <strong id="adminImportant">
+                    0
+                </strong>
+
+            </div>
+
+        </div>
+
+
+        <div class="admin-stat">
+
+            <div class="admin-stat-icon">
+                📝
+            </div>
+
+            <div>
+
+                <span>Examination</span>
+
+                <strong id="adminExam">
+                    0
+                </strong>
+
+            </div>
+
+        </div>
+
+
+        <div class="admin-stat">
+
+            <div class="admin-stat-icon">
+                💼
+            </div>
+
+            <div>
+
+                <span>Placement</span>
+
+                <strong id="adminPlacement">
+                    0
+                </strong>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- Notice management -->
+
+    <section class="management-card">
+
+        <div class="management-header">
+
+            <div>
+
+                <h2>Notice Management</h2>
+
+                <p>
+                    Add, edit or remove announcements.
+                </p>
+
+            </div>
+
+            <input
+                type="text"
+                id="adminSearch"
+                class="admin-search"
+                placeholder="Search notices..."
+            >
+
+        </div>
+
+
+        <div class="table-wrapper">
+
+            <table class="notice-table">
+
+                <thead>
+
+                    <tr>
+
+                        <th>Notice</th>
+
+                        <th>Category</th>
+
+                        <th>Date</th>
+
+                        <th>Priority</th>
+
+                        <th>Actions</th>
+
+                    </tr>
+
+                </thead>
+
+                <tbody id="adminNoticeTable">
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+<!-- ================= NOTICE MODAL ================= -->
+
+<div
+    id="noticeModal"
+    class="modal"
+>
+
+    <div class="modal-content">
+
+        <div class="modal-header">
+
+            <div>
+
+                <h2 id="modalTitle">
+                    Add New Notice
+                </h2>
+
+                <p>
+                    Enter announcement details below.
+                </p>
+
+            </div>
+
+            <button
+                id="closeNoticeModal"
+                class="close-modal"
+            >
+                ×
+            </button>
+
+        </div>
+
+
+        <form id="noticeForm">
+
+            <input
+                type="hidden"
+                id="noticeId"
+            >
+
+
+            <div class="form-row">
+
+                <div class="form-group">
+
+                    <label>
+                        Notice Title
+                    </label>
+
+                    <input
+                        type="text"
+                        id="noticeTitle"
+                        placeholder="Enter notice title"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label>
+                        Category
+                    </label>
+
+                    <select
+                        id="noticeCategory"
+                        required
+                    >
+
+                        <option value="">
+                            Select category
+                        </option>
+
+                        <option value="Academic">
+                            Academic
+                        </option>
+
+                        <option value="Examination">
+                            Examination
+                        </option>
+
+                        <option value="Placement">
+                            Placement
+                        </option>
+
+                        <option value="Events">
+                            Events
+                        </option>
+
+                        <option value="Holiday">
+                            Holiday
+                        </option>
+
+                        <option value="Fees">
+                            Fees
+                        </option>
+
+                        <option value="General">
+                            General
+                        </option>
+
+                    </select>
+
+                </div>
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label>
+                    Description
+                </label>
+
+                <textarea
+                    id="noticeDescription"
+                    rows="5"
+                    placeholder="Enter notice details..."
+                    required
+                ></textarea>
+
+            </div>
+
+
+            <div class="form-row">
+
+                <div class="form-group">
+
+                    <label>
+                        Notice Date
+                    </label>
+
+                    <input
+                        type="date"
+                        id="noticeDate"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label>
+                        Expiry Date
+                    </label>
+
+                    <input
+                        type="date"
+                        id="noticeExpiry"
+                    >
+
+                </div>
+
+            </div>
+
+
+            <div class="form-row">
+
+                <div class="form-group">
+
+                    <label>
+                        Priority
+                    </label>
+
+                    <select id="noticePriority">
+
+                        <option value="Normal">
+                            Normal
+                        </option>
+
+                        <option value="Important">
+                            Important
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label>
+                        Department
+                    </label>
+
+                    <select id="noticeDepartment">
+
+                        <option value="All Departments">
+                            All Departments
+                        </option>
+
+                        <option value="Information Technology">
+                            Information Technology
+                        </option>
+
+                        <option value="Computer Science">
+                            Computer Science
+                        </option>
+
+                        <option value="Electronics">
+                            Electronics
+                        </option>
+
+                        <option value="Mechanical">
+                            Mechanical
+                        </option>
+
+                    </select>
+
+                </div>
+
+            </div>
+
+
+            <div class="modal-actions">
+
+                <button
+                    type="button"
+                    id="cancelNotice"
+                    class="cancel-btn"
+                >
+                    Cancel
+                </button>
+
+                <button
+                    type="submit"
+                    class="primary-btn"
+                >
+                    Save Notice
+                </button>
+
+            </div>
+
+        </form>
+
+    </div>
+
+</div>
+
+
+<script src="js/script.js"></script>
+
+</body>
+</html>

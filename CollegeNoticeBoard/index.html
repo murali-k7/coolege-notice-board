@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>College Digital Notice Board</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+<!-- ================= HEADER ================= -->
+
+<header class="header">
+
+    <div class="logo-section">
+        <div class="college-logo">C</div>
+
+        <div>
+            <h1>ABC College of Engineering</h1>
+            <p>Digital Notice Board</p>
+        </div>
+    </div>
+
+    <nav class="navbar">
+        <a href="index.html" class="active">Home</a>
+        <a href="#notices">Notices</a>
+        <a href="#categories">Categories</a>
+        <a href="login.html">Admin Login</a>
+    </nav>
+
+</header>
+
+
+<!-- ================= HERO ================= -->
+
+<section class="hero">
+
+    <div class="hero-content">
+
+        <span class="hero-label">COLLEGE ANNOUNCEMENTS</span>
+
+        <h2>Stay Updated With<br>College Notices</h2>
+
+        <p>
+            Access the latest academic announcements, examination
+            updates, events, placements and important circulars.
+        </p>
+
+        <a href="#notices" class="primary-btn">
+            View Latest Notices
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- ================= MAIN ================= -->
+
+<main class="container" id="notices">
+
+    <!-- Statistics -->
+
+    <section class="stats">
+
+        <div class="stat-card">
+            <div class="stat-icon">📢</div>
+            <div>
+                <h3 id="totalNotices">0</h3>
+                <p>Total Notices</p>
+            </div>
+        </div>
+
+        <div class="stat-card">
+            <div class="stat-icon">🔥</div>
+            <div>
+                <h3 id="importantNotices">0</h3>
+                <p>Important Notices</p>
+            </div>
+        </div>
+
+        <div class="stat-card">
+            <div class="stat-icon">📅</div>
+            <div>
+                <h3 id="todayNotices">0</h3>
+                <p>Recent Notices</p>
+            </div>
+        </div>
+
+    </section>
+
+
+    <!-- Notice heading -->
+
+    <section class="section-heading">
+
+        <div>
+            <span class="small-title">ANNOUNCEMENTS</span>
+            <h2>Latest Notices</h2>
+        </div>
+
+        <a href="notice.html" class="outline-btn">
+            View All
+        </a>
+
+    </section>
+
+
+    <!-- Search -->
+
+    <div class="search-area">
+
+        <div class="search-box">
+
+            <span>🔍</span>
+
+            <input
+                type="text"
+                id="searchInput"
+                placeholder="Search notices..."
+            >
+
+        </div>
+
+        <select id="categoryFilter">
+
+            <option value="all">All Categories</option>
+            <option value="Academic">Academic</option>
+            <option value="Examination">Examination</option>
+            <option value="Placement">Placement</option>
+            <option value="Events">Events</option>
+            <option value="Holiday">Holiday</option>
+            <option value="Fees">Fees</option>
+            <option value="General">General</option>
+
+        </select>
+
+    </div>
+
+
+    <!-- Notices -->
+
+    <div id="noticeContainer" class="notice-grid"></div>
+
+</main>
+
+
+<!-- ================= CATEGORIES ================= -->
+
+<section class="categories-section" id="categories">
+
+    <div class="container">
+
+        <div class="section-heading center">
+
+            <div>
+                <span class="small-title">BROWSE BY TYPE</span>
+                <h2>Notice Categories</h2>
+            </div>
+
+        </div>
+
+
+        <div class="category-grid">
+
+            <button class="category-card" data-category="Academic">
+                <span>🎓</span>
+                <h3>Academic</h3>
+                <p>Academic announcements</p>
+            </button>
+
+            <button class="category-card" data-category="Examination">
+                <span>📝</span>
+                <h3>Examination</h3>
+                <p>Exam schedules and updates</p>
+            </button>
+
+            <button class="category-card" data-category="Placement">
+                <span>💼</span>
+                <h3>Placement</h3>
+                <p>Jobs and placement drives</p>
+            </button>
+
+            <button class="category-card" data-category="Events">
+                <span>🎉</span>
+                <h3>Events</h3>
+                <p>College events and programs</p>
+            </button>
+
+            <button class="category-card" data-category="Holiday">
+                <span>🏖️</span>
+                <h3>Holiday</h3>
+                <p>Holiday announcements</p>
+            </button>
+
+            <button class="category-card" data-category="General">
+                <span>📢</span>
+                <h3>General</h3>
+                <p>General announcements</p>
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer class="footer">
+
+    <div class="container footer-content">
+
+        <div>
+            <h3>ABC College of Engineering</h3>
+
+            <p>
+                Digital College Notice Board
+            </p>
+        </div>
+
+        <div>
+            <p>
+                © 2026 ABC College. All Rights Reserved.
+            </p>
+        </div>
+
+    </div>
+
+</footer>
+
+
+<script src="js/script.js"></script>
+
+</body>
+</html>
